@@ -46,16 +46,6 @@ jobs:
           base: ""
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
-      - name: Project from a repository
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@latest
-        with:
-          filename: projects.svg
-          token: ${{ secrets.METRICS_TOKEN_WITH_SCOPES }}
-          base: ""
-          plugin_projects: yes
-          plugin_projects_repositories: lowlighter/metrics/projects/1
-          plugin_projects_descriptions: yes
       - name: Recent activity
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
