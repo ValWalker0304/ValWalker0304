@@ -9,16 +9,14 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
-    steps:
-    
+    steps: 
       - name: GitHubInfo
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}  
-          
       - name: CodeLanguages
-      if: ${{ success() || failure() }}
+        if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           filename: metrics.plugin.languages.details.svg
