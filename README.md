@@ -1,4 +1,5 @@
 <img src="/github-metrics.svg" alt="Metrics" width="100%">
+<img src="/github-metrics.svg" alt="Most used (with details)" width="100%">
 <img src="https://github-readme-stats.vercel.app/api/top-langs?username=ValWalker0304&theme=dark"/>
 <!--
 ## My GitHub stats
