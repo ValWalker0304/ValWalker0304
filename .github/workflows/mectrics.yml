@@ -28,3 +28,59 @@ jobs:
             gnuplot
           plugin_languages_details: bytes-size, percentage
           plugin_languages_limit: 4
+      - name: RecentlyStarred
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.plugin.stars.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_stars: yes
+          plugin_stars_limit: 3
+      - name: FullYearCalendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: fullyear.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+      - name: Project from a repository
+        uses: lowlighter/metrics@latest
+        with:
+          filename: projects.svg
+          token: ${{ secrets.METRICS_TOKEN_WITH_SCOPES }}
+          base: ""
+          plugin_projects: yes
+          plugin_projects_repositories: lowlighter/metrics/projects/1
+          plugin_projects_descriptions: yes
+      - name: Recent activity
+        uses: lowlighter/metrics@latest
+        with:
+          filename: activity.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 0
+          plugin_activity_filter: issue, pr, release, fork, review, ref/create
+      - name: Compact display
+        uses: lowlighter/metrics@latest
+        with:
+          filename: achievments.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_achievements: yes
+          plugin_achievements_only: >-
+            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
+            scripter, packager, explorer, infographile, manager
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: X
+      - name: Example
+        uses: lowlighter/metrics@latest
+        with:
+          template: terminal
+          filename: terminal.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, metadata
+
+
